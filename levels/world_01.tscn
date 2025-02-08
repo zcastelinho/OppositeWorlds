@@ -215,7 +215,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ceh7q"]
-size = Vector2(20, 29)
+size = Vector2(20, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ty02t"]
 size = Vector2(688.5, 15)
@@ -242,7 +242,6 @@ shape = SubResource("CapsuleShape2D_s1qqg")
 [node name="Player2" type="CharacterBody2D" parent="."]
 position = Vector2(217, 260)
 script = ExtResource("3_7bpmb")
-inverted_gravity = true
 
 [node name="Animation" type="AnimatedSprite2D" parent="Player2"]
 sprite_frames = SubResource("SpriteFrames_tjx4a")
@@ -250,7 +249,7 @@ animation = &"idle"
 frame_progress = 0.753282
 
 [node name="Collision" type="CollisionShape2D" parent="Player2"]
-position = Vector2(0, 5.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_ceh7q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
