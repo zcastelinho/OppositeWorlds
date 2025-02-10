@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_FORCE = 400.0  # Agora positivo, ajustamos no código
+const SPEED = 200.0
+const JUMP_FORCE = 300.0  # Agora positivo, ajustamos no código
 const GRAVITY = 980.0
 
 @export var inverted_gravity: bool = true  # Define se o jogador está no teto
