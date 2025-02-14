@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://boah4cxspjnce"]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_vqj66"]
+[ext_resource type="Texture2D" uid="uid://dlld5fwrr1mv3" path="res://assets/items/pixilart-sprite (2).png" id="2_mvq1m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l826k"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugcmd"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gdbw"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er6u1"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0lrc"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg8qe"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21563"]
+atlas = ExtResource("2_mvq1m")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hc2rf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l826k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugcmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gdbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er6u1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0lrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg8qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21563")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ege0s"]
+radius = 7.0
+
+[node name="coin" type="Area2D"]
+position = Vector2(0, -7)
+collision_layer = 8
+script = ExtResource("1_vqj66")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_hc2rf")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.404827
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ege0s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
